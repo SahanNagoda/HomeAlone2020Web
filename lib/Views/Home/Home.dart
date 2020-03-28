@@ -56,75 +56,166 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          Positioned(
-            // top: AppBar().preferredSize.height,
-            left: 80.0,
+          Visibility(
+            visible: width < 800,
             child: Container(
-              width: (width / 2) - 80.0,
-              height: height,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: ListView(
                 children: <Widget>[
-                  Text(
-                    "Welcome",
-                    textAlign: TextAlign.center,
-                    textScaleFactor: 6.0,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  Text(
-                    "Brute Force Task",
-                    textAlign: TextAlign.center,
-                    textScaleFactor: 4.0,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  SizedBox(
-                    height: height * 0.1,
-                  ),
-                  Text(
-                    "The Options class describes the http request information and configuration. Each Dio instance has a base config for all requests maked by itself, and we can override the base config with [Options] when make a single request. The [BaseOptions] declaration as follows",
-                    textAlign: TextAlign.start,
-                    textScaleFactor: 1.5,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  SizedBox(
-                    height: height * 0.1,
-                  ),
-                  Center(
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width / 2 * 0.5,
-                      child: RaisedButton(
-                        onPressed: token == null ? null : () => onPress(),
-                        child: Text(
-                          token == null ? "Invalid Token" : "Enter",
-                          style: TextStyle(color: Colors.white),
+                  Padding(
+                    padding:
+                        EdgeInsets.only(top: AppBar().preferredSize.height),
+                    child: Container(
+                      width: (width),
+                      // height: height,
+                      child: Center(
+                        child: Image.asset(
+                          'assets/img.png',
+                          fit: BoxFit.fitWidth,
                         ),
-                        color: Color(0xFF5b86e5),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(18.0),
-                            side: BorderSide(color: Color(0xFF36d1dc))),
                       ),
                     ),
-                  )
+                  ),
+                  Container(
+                    width: (width),
+                    // height: height,
+                    padding: EdgeInsets.all(10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        FittedBox(
+                          child: Text(
+                            "Welcome",
+                            textAlign: TextAlign.center,
+                            textScaleFactor: 6.0,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        FittedBox(
+                          child: Text(
+                            "Brute Force Task",
+                            textAlign: TextAlign.center,
+                            textScaleFactor: 4.0,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        SizedBox(
+                          height: height * 0.1,
+                        ),
+                        // Text(
+                        //   "The Options class describes the http request information and configuration. Each Dio instance has a base config for all requests maked by itself, and we can override the base config with [Options] when make a single request. The [BaseOptions] declaration as follows",
+                        //   textAlign: TextAlign.start,
+                        //   textScaleFactor: 1.5,
+                        //   style: TextStyle(color: Colors.white),
+                        // ),
+                        SizedBox(
+                          height: height * 0.1,
+                        ),
+                        Center(
+                          child: SizedBox(
+                            // width: MediaQuery.of(context).size.width / 2 * 0.5,
+                            child: RaisedButton(
+                              onPressed: token == null ? null : () => onPress(),
+                              child: Text(
+                                token == null ? "Invalid Token" : "Enter",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              color: Color(0xFF5b86e5),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: new BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Color(0xFF36d1dc))),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: height * 0.1,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
-          Positioned(
-            // top: AppBar().preferredSize.height,
-            right: 80.0,
-            child: Container(
-              width: (width / 2) - 80.0,
-              height: height,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Image.asset(
-                    'assets/img.png',
-                    fit: BoxFit.fill,
-                  )
-                ],
+          Visibility(
+            visible: width > 800,
+            child: Positioned(
+              // top: AppBar().preferredSize.height,
+              left: 80.0,
+              child: Container(
+                width: (width / 2) - 80.0,
+                height: height,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    FittedBox(
+                      child: Text(
+                        "Welcome",
+                        textAlign: TextAlign.center,
+                        textScaleFactor: 6.0,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    FittedBox(
+                      child: Text(
+                        "Brute Force Task",
+                        textAlign: TextAlign.center,
+                        textScaleFactor: 4.0,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    SizedBox(
+                      height: height * 0.1,
+                    ),
+                    // Text(
+                    //   "The Options class describes the http request information and configuration. Each Dio instance has a base config for all requests maked by itself, and we can override the base config with [Options] when make a single request. The [BaseOptions] declaration as follows",
+                    //   textAlign: TextAlign.start,
+                    //   textScaleFactor: 1.5,
+                    //   style: TextStyle(color: Colors.white),
+                    // ),
+                    SizedBox(
+                      height: height * 0.1,
+                    ),
+                    Center(
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width / 2 * 0.5,
+                        child: RaisedButton(
+                          onPressed: token == null ? null : () => onPress(),
+                          child: Text(
+                            token == null ? "Invalid Token" : "Enter",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          color: Color(0xFF5b86e5),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(18.0),
+                              side: BorderSide(color: Color(0xFF36d1dc))),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Visibility(
+            visible: width > 800,
+            child: Positioned(
+              // top: AppBar().preferredSize.height,
+              right: 80.0,
+              child: Container(
+                width: (width / 2) - 80.0,
+                height: height,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/img.png',
+                      fit: BoxFit.fill,
+                    )
+                  ],
+                ),
               ),
             ),
           ),

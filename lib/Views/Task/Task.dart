@@ -162,6 +162,12 @@ class _TaskState extends State<Task> {
                                         TextSpan(
                                             text:
                                                 "to decode this hash. You are free to use any tool or resources. After decodeing enter the final password below text field. "),
+                                        TextSpan(
+                                            text:
+                                                "You can sumbit only ONE answer. ",
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                            ))
                                       ],
                                     ),
                                   ),
@@ -187,7 +193,7 @@ class _TaskState extends State<Task> {
                                 child: RaisedButton(
                                   onPressed: password == null || password == ""
                                       ? null
-                                      : () => getResult(),
+                                      : () => _dialogWarning(),
                                   child: Text(
                                     token == null
                                         ? "Invalid Token"
@@ -399,5 +405,40 @@ class _TaskState extends State<Task> {
         });
       }
     });
+  }
+
+  Future<void> _dialogWarning() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Warning'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text('Answer must be final.'),
+                Text('You can submit one answer'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            FlatButton(
+              child: Text('Submit'),
+              onPressed: () {
+                getResult();
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 }

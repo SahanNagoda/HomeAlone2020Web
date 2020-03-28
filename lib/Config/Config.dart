@@ -2,7 +2,7 @@ class Config {
   // static final String url = "https://class-manager-backend.herokuapp.com";
   // static final String url = "http://192.168.1.100:3005";
   // static final String url = "http://18.204.203.62:3005";
-  static final String deploy = "Local";
+  static final String deploy = "Production";
   static String getURL() {
     switch (deploy) {
       case "Production":
