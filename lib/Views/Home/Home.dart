@@ -93,7 +93,7 @@ class _HomeState extends State<Home> {
                         ),
                         FittedBox(
                           child: Text(
-                            "Brute Force Task",
+                            "May the FORCE be with you",
                             textAlign: TextAlign.center,
                             textScaleFactor: 4.0,
                             style: TextStyle(color: Colors.white),
@@ -159,7 +159,7 @@ class _HomeState extends State<Home> {
                     ),
                     FittedBox(
                       child: Text(
-                        "Brute Force Task",
+                        "May the FORCE be with you",
                         textAlign: TextAlign.center,
                         textScaleFactor: 4.0,
                         style: TextStyle(color: Colors.white),
