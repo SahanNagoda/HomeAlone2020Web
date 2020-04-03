@@ -6,7 +6,7 @@ class Config {
   static String getURL() {
     switch (deploy) {
       case "Production":
-        return "https://homealonebackend.firebaseapp.com";
+        return "https://homealone2020.herokuapp.com";
         break;
       case "Local":
         return "http://localhost:5000";

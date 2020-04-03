@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           if (pathComponents[1] == 'task') {
             return MaterialPageRoute(
               builder: (context) {
-                String token = Uri.decodeFull(pathComponents.last);
+                String token = pathComponents.last;
                 return Task(id: token);
               },
             );
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
             print("Home");
             return MaterialPageRoute(
               builder: (context) {
-                String token = Uri.decodeFull(pathComponents.last);
+                String token = pathComponents.last;
 
                 return Home(id: token);
               },
